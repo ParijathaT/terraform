@@ -24,12 +24,12 @@ tags = {
       " sudo systemctl start nginx service",
     ]
   }
-  provisioner "remote-exec" {
-    when = destroy
-    inline = [
-      "sudo systemctl stop nginx",
-    ]
-  }
+  # provisioner "remote-exec" {
+  #   when = destroy
+  #   inline = [
+  #     "sudo systemctl stop nginx",
+  #   ]
+  # }
 }
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
